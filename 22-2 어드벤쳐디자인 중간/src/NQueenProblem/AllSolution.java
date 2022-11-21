@@ -2,8 +2,8 @@ package NQueenProblem;
 
 
 public class AllSolution {
-    static int allsol = 0;
-    static boolean check(int[][] board, int col) {   
+    static int allsol;
+    static boolean check(int[][] board, int col) {
         if (col >= NQueenTest.boardSize) {
             ++allsol;
         }
@@ -26,7 +26,8 @@ public class AllSolution {
         return false;
     }
 
-    static boolean solve(int boardSize) {
+    static int solve(int boardSize) {
+        allsol =0;
         int n = boardSize;
         int[][] board = new int[n][n]; //체스판 생성
 
@@ -38,7 +39,7 @@ public class AllSolution {
         AllSolution.check(board, 0);
 
         System.out.println("총 해답의 개수는 "+allsol+"입니다.");
-        return true;
+        return allsol;
 
     }
     
